@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('reward_logs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('child_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('reward_id')->constrained()->cascadeOnDelete();
+            $table->datetime('rewarded_at');
+            $table->unsignedInteger('quantity');
+            $table->unsignedInteger('used_point');
             $table->timestamps();
         });
     }

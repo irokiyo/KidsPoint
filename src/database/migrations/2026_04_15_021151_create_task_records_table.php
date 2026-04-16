@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('task_records', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('child_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('task_id')->constrained()->cascadeOnDelete();
+            $table->datetime('recorded_at');
+            $table->text('comment')->nullable();
+            $table->unsignedInteger('point')->nullable();
             $table->timestamps();
         });
     }
