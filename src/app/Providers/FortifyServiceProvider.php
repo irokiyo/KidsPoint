@@ -21,7 +21,23 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(RegisterResponse::class, function () {
+            return new class implements RegisterResponse {
+                public function toResponse($request)
+                {
+                    return redirect('/email/verify');
+                }
+            };
+        });
+
+        $this->app->singleton(VerifyEmailResponse::class, function () {
+            return new class implements VerifyEmailResponse {
+                public function toResponse($request)
+                {
+                    return redirect('/mypage/profile');
+                }
+            };
+        });
     }
 
     /**
