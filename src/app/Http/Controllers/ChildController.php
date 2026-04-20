@@ -26,7 +26,7 @@ class ChildController extends Controller
         $imagePath = $request->file('img_url') ? $request->file('img_url')->store('img_url', 'public') : null;
 
         Child::create([
-            'user_id' => 1,
+            'user_id' => auth()->id(),
             'name' => $request->name,
             'birthday' => $request->birthday,
             'sex' => $request->sex,
