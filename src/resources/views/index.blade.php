@@ -10,7 +10,7 @@
 @section('content')
 @include('partials.sidebar')
 <div class="ttl">
-    <h2>MM月DD日のお手伝い</h2>
+    <h2>{{ $currentDate }}のお手伝い</h2>
 </div>
 <div class="card">
     @foreach($children as $child)
