@@ -18,6 +18,10 @@ class TaskController extends Controller
         $tasks = Task::all();
         return view('task.select', compact('tasks', 'child'));
     }
+    public function create()
+    {
+        return view('task.register');
+    }
     public function store(Request $request)
     {
         Task::create([
@@ -26,5 +30,10 @@ class TaskController extends Controller
             'category_id' => $request->category_id
         ]);
         return redirect()->route('task.index')->with('success', '登録しました。');
+    }
+    public function destroy(Task $task)
+    {
+        $task->delete();
+        return redirect()->route('task.index')->with('success', '削除しました。');
     }
 }

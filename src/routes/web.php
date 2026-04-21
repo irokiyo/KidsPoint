@@ -23,7 +23,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/task/index', [TaskController::class, 'index'])->name('task.index');
     Route::get('/task/select/{child}', [TaskController::class, 'select'])->name('task.select');
+    Route::get('/task/store', [TaskController::class, 'create'])->name('task.create');
     Route::post('/task/store', [TaskController::class, 'store'])->name('task.store');
+    Route::delete('/task/destroy/{task}', [TaskController::class, 'destroy'])->name('task.destroy');
 
     Route::post('/task/record/{child}', [TaskRecordController::class, 'store'])->name('task.record');
 
