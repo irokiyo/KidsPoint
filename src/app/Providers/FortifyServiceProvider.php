@@ -34,7 +34,7 @@ class FortifyServiceProvider extends ServiceProvider
             return new class implements VerifyEmailResponse {
                 public function toResponse($request)
                 {
-                    return redirect('/mypage/profile');
+                    return redirect('/child/index');
                 }
             };
         });
