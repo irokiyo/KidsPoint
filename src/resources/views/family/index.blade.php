@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
-
 @section('css')
 @endsection
 
 @section('header')
+@include('partials.header')
 <a href="{{ route('child.create') }}" class="link">＋</a>
 @endsection
 
 @section('content')
+@include('partials.sidebar')
 
 <h2 class="ttl">子供リスト</h2>
 @foreach($children as $child)

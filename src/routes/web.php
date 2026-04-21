@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ChildController;
 use App\Http\Controllers\RewardController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\TaskRecordController;
 use App\Http\Controllers\CategoryController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+
     Route::get('/child/index', [ChildController::class, 'index'])->name('child.index');
     Route::get('/child/show/{child}', [ChildController::class, 'show'])->name('child.show');
     Route::get('/child/store', [ChildController::class, 'create'])->name('child.create');
@@ -18,7 +22,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 
     Route::get('/task/index', [TaskController::class, 'index'])->name('task.index');
+    Route::get('/task/select/{child}', [TaskController::class, 'select'])->name('task.select');
     Route::post('/task/store', [TaskController::class, 'store'])->name('task.store');
+
+    Route::post('/task/record/{child}', [TaskRecordController::class, 'store'])->name('task.record');
+
+
 
     Route::post('/reward/store', [RewardController::class, 'store'])->name('reward.store');
 });
