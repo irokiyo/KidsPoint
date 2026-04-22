@@ -7,6 +7,7 @@ use App\Http\Controllers\RewardController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TaskRecordController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\RewardLogController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -30,6 +31,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/task/record/{child}', [TaskRecordController::class, 'store'])->name('task.record');
 
 
-
+    Route::get('/reward/index', [RewardController::class, 'index'])->name('reward.index');
+    Route::get('/reward/create', [RewardController::class, 'create'])->name('reward.create');
     Route::post('/reward/store', [RewardController::class, 'store'])->name('reward.store');
+    Route::delete('/reward/destroy/{reward}', [RewardController::class, 'destroy'])->name('reward.destroy');
+
+    Route::post('/reward/log/{child}', [RewardLogController::class, 'store'])->name('reward.log');
 });
