@@ -31,5 +31,13 @@ class Child extends Model
     {
         return $this->hasMany(RewardLog::class);
     }
+    public function totalDayPoint()
+    {
+        return $this->taskRecords()->whereDate('created_at', now())->sum('point');
+    }
+    public function totalMonthPoint()
+    {
+        return $this->taskRecords()->whereMonth('created_at', now()->month)->sum('point');
+    }    
 
 }

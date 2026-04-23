@@ -20,7 +20,7 @@ class TaskRecordController extends Controller
                 'task_id' => $task->id,
                 'recorded_at' => now(),
                 'comment' => $request->comment ?? '',
-                'point' => $request->point,
+                'point' => $task->point,
             ]);
         }
         return redirect()->route('home')->with('success', '記録しました。');

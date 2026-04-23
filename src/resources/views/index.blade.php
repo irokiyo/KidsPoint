@@ -30,11 +30,11 @@
                 <ul class="content__list">
                     <li class="content__item">
                         <p class="item__ttl">今日のお手伝い</p>
-                        <p class="point">0ポイント</p>
+                        <p class="point">{{ $child->totalDayPoint() }}ポイント</p>
                     </li>
                     <li class="content__item">
                         <p class="item__ttl">今月のお手伝い</p>
-                        <p class="point">0ポイント</p>
+                        <p class="point">{{ $child->totalMonthPoint() }}ポイント</p>
                     </li>
                 </ul>
             </div>
