@@ -9,7 +9,7 @@
 
 @section('content')
 @include('partials.sidebar')
-
+<div class="main-content">
 <h2 class="ttl">どの景品に変える？</h2>
 <form action="{{ route('reward.log', ['child' => $child->id]) }}" method="post">
     @csrf
@@ -24,5 +24,6 @@
         <button type="submit">交換する</button>
     </div>
 </form>
+</div>
 @endsection
 

@@ -9,7 +9,7 @@
 
 @section('content')
 @include('partials.sidebar')
-
+<div class="main-content">
 <h2 class="ttl">報奨新規登録</h2>
 <form action="{{ route('reward.store') }}" method="post">
     @csrf
@@ -25,5 +25,6 @@
         <button type="submit">登録する</button>
     </div>
 </form>
+</div>
 @endsection
 

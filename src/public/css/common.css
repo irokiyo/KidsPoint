@@ -1,0 +1,190 @@
+body {
+    font-family: sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.main {
+    flex: 1;
+
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* sidebar */
+.sidebar {
+    background: linear-gradient(180deg, #fee14f, #ea6913);
+    padding: 20px 10px;
+    min-height: 100vh;
+}
+
+.sidebar__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar__item + .sidebar__item {
+    margin-top: 16px;
+}
+
+.sidebar__link {
+    display: block;
+    padding: 14px 16px;
+    background-color: #fff8dc;
+    border-radius: 12px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700 ; 
+    text-align: center;
+    transition: 0.2s;
+}
+
+.sidebar__link:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.main-content{
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* title */
+.ttl {
+    margin-bottom: 24px;
+}
+
+.ttl__text {
+    margin: 0;
+    font-size: 24px;
+    color: #5c4b3b;
+}
+
+/* card list */
+.child-list {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* card */
+.card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.child-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.child-profile__img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eee;
+    border: 3px solid #f2c94c;
+}
+
+.child-profile__name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card__sub-link {
+    color: #8a6d3b;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.card__sub-link:hover {
+    text-decoration: underline;
+}
+
+/* points */
+.card__content {
+    margin-bottom: 20px;
+}
+
+.point-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.point-list__item {
+    background-color: #fff8e8;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.point-list__ttl {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #7a6a58;
+}
+
+.point-list__value {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #d17b00;
+}
+
+.item-list{
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    border-bottom: 1px solid #eee;
+    justify-content: space-between;
+}
+.action__btn{
+    text-align: right;
+}
+.delete__link{
+    background-color: #ec6f2c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}

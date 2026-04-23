@@ -8,8 +8,9 @@
 @endsection
 
 @section('content')
+<div class="page">
 @include('partials.sidebar')
-
+<div class="main-content">
 <h2 class="ttl">どのお手伝いをしたかな？</h2>
 <form action="{{ route('task.record', ['child' => $child->id]) }}" method="post">
     @csrf
@@ -24,5 +25,7 @@
         <button type="submit">記録する</button>
     </div>
 </form>
+</div>
+</div>
 @endsection
 
