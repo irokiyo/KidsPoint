@@ -31,6 +31,15 @@ class TaskController extends Controller
         ]);
         return redirect()->route('task.index')->with('success', '登録しました。');
     }
+    public function update(Request $request, Task $task)
+    {
+        $task->update([
+            'name' => $request->name,
+            'point' => $request->point,
+            'category_id' => $request->category_id
+        ]);
+        return redirect()->route('task.index')->with('success', '更新しました。');
+    }
     public function destroy(Task $task)
     {
         $task->delete();

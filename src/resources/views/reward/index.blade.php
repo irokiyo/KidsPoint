@@ -20,6 +20,7 @@
             <p class="card__reward__point">{{$reward->point}}ポイント</p>
 
             <div class="action__btn">
+                <a href="{{ route('reward.create', ['reward' => $reward->id]) }}" class="edit__link">編集</a>
                 <form action="{{ route('reward.destroy', ['reward' => $reward->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')

@@ -20,6 +20,7 @@
             <p class="card__task__point">{{$task->point}}ポイント</p>
 
             <div class="action__btn">
+                <a href="{{ route('task.create', ['task' => $task->id]) }}" class="edit__link">編集</a>
                 <form action="{{ route('task.destroy', ['task' => $task->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')

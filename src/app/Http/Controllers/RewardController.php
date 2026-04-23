@@ -24,6 +24,14 @@ class RewardController extends Controller
         ]);
         return redirect()->route('reward.index')->with('success', '登録しました。');
     }
+    public function update(Request $request, Reward $reward)
+    {
+        $reward->update([
+            'name' => $request->name,
+            'point' => $request->point,
+        ]);
+        return redirect()->route('reward.index')->with('success', '更新しました。');
+    }
     public function destroy(Reward $reward)
     {
         $reward->delete();

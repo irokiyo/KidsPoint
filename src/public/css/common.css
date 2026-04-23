@@ -179,6 +179,8 @@ img {
 }
 .action__btn{
     text-align: right;
+    display: flex;
+    gap: 10px;
 }
 .delete__link{
     background-color: #ec6f2c;
