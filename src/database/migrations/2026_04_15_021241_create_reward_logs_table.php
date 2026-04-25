@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('child_id')->constrained()->cascadeOnDelete();
             $table->foreignId('reward_id')->constrained()->cascadeOnDelete();
             $table->datetime('rewarded_at');
-            $table->unsignedInteger('quantity');
+            $table->unsignedInteger('quantity')->nullable()->default(1) ;
             $table->unsignedInteger('used_point');
             $table->timestamps();
         });

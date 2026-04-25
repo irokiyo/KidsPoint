@@ -42,7 +42,7 @@
                 <a href="{{ route('task.select', ['child' => $child->id]) }}" class="card__button">お手伝いしたよ</a>
             </div>
             <div class="card__url">
-                <a href="" class="card__button">ポイントを使う</a>
+                <a href="{{ route('reward.log', ['child' => $child->id]) }}" class="card__button">ポイントを使う</a>
             </div>
         </div>
         @endforeach

@@ -38,5 +38,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/reward/update/{reward}', [RewardController::class, 'update'])->name('reward.update');
     Route::delete('/reward/destroy/{reward}', [RewardController::class, 'destroy'])->name('reward.destroy');
 
-    Route::post('/reward/log/{child}', [RewardLogController::class, 'store'])->name('reward.log');
+    Route::get('/reward/log/{child}', [RewardLogController::class, 'create'])->name('reward.log');
+    Route::post('/reward/log/{child}', [RewardLogController::class, 'store'])->name('reward.log.sore');
 });
