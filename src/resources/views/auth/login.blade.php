@@ -2,13 +2,13 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/auth.css') }}" />
 @endsection
 
 @section('content')
-<div class="login-container">
-    <div class="login-card">
-        <h2 class="login-title">ログイン</h2>
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="auth-title">ログイン</h2>
 
         <form action="" method="POST" class="login-form">
             @csrf
@@ -28,10 +28,10 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn-login">ログインする</button>
+            <button type="submit" class="auth__btn">ログインする</button>
         </form>
 
-        <a href="{{route('register')}}" class="login-link">会員登録はこちら</a>
+        <a href="{{route('register')}}" class="auth-link">会員登録はこちら</a>
     </div>
 </div>
 @endsection

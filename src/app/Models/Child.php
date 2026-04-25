@@ -35,9 +35,9 @@ class Child extends Model
     {
         return $this->taskRecords()->whereDate('created_at', now())->sum('point');
     }
-    public function totalMonthPoint()
+    public function totalPoint()
     {
-        return $this->taskRecords()->whereMonth('created_at', now()->month)->sum('point');
+        return $this->taskRecords()->sum('point');
     }    
 
 }

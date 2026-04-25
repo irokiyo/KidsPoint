@@ -7,5 +7,11 @@
         <li class="sidebar__item"><a href="{{ route('child.index') }}" class="sidebar__link">子供リスト</a></li>
         <li class="sidebar__item"><a href="{{ route('task.index') }}" class="sidebar__link">お手伝い管理</a></li>
         <li class="sidebar__item"><a href="{{ route('reward.index') }}" class="sidebar__link">報酬管理</a></li>
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <li class="sidebar__item">
+                <button type="submit" class="sidebar__link">ログアウト</button>
+            </li>
+        </form>
     </ul>
 </div>

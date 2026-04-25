@@ -2,13 +2,13 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/register.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/auth.css') }}" />
 @endsection
 
 @section('content')
-<div class="register-container">
-    <div class="register-card">
-        <h2 class="register-title">会員登録</h2>
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="auth-title">会員登録</h2>
 
         <form action="{{route('register')}}" method="POST" class="register-form" novalidate>
             @csrf
@@ -44,10 +44,10 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn-register">登録する</button>
+            <button type="submit" class="auth__btn">登録する</button>
         </form>
 
-        <a href="{{route('login')}}" class="login-link">ログインはこちら</a>
+        <a href="{{route('login')}}" class="auth-link">ログインはこちら</a>
     </div>
 </div>
 @endsection
