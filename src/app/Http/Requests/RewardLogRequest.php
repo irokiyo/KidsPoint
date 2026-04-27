@@ -12,7 +12,7 @@ class RewardLogRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,13 @@ class RewardLogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'used_point' => ['required'],
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            'used_point.required' => '報奨が選ばれていません。',
         ];
     }
 }
