@@ -16,7 +16,7 @@
             @csrf
             <div class="form-group">
                 <label for="category" class="form-label">カテゴリ</label>
-                <select name="category_id" id="category_id" required>
+                <select name="category_id" id="category_id" >
                     <option value="">選択してください</option>
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="name" class="form-label">お手伝い内容</label>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name">
                 @error('name')
                 <div class="error__message">
                     {{ $message }}
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label for="point" class="form-label">ポイント</label>
-                <input type="number" name="point" id="point" required>
+                <input type="number" name="point" id="point">
                 @error('point')
                 <div class="error__message">
                     {{ $message }}
