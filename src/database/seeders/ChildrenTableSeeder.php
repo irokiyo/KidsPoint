@@ -16,7 +16,7 @@ class ChildrenTableSeeder extends Seeder
             'name' => '山田花子',
             'birthday' => '2000-01-01',
             'sex' => '女',
-            'url_img' => null,
+            'img_url' => null,
             ]
         ];
         DB::table('children')->insert($params);

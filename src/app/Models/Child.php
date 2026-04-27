@@ -15,7 +15,7 @@ class Child extends Model
             'name',
             'birthday',
             'sex',
-            'url_img',
+            'img_url',
 
         ];
     public function user()
@@ -38,6 +38,10 @@ class Child extends Model
     public function totalPoint()
     {
         return $this->taskRecords()->sum('point');
-    }    
+    }
+    public function totalUsedPoint()
+    {
+        return $this->rewardLogs()->sum('used_point');
+    }
 
 }

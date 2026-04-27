@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('birthday');
             $table->string('sex')->nullable();
-            $table->string('url_img')->nullable();
+            $table->string('img_url')->nullable();
             $table->timestamps();
         });
     }

@@ -12,9 +12,11 @@ class CategoriesTableSeeder extends Seeder
     public function run(): void
     {
         $params = [
-            ['name' => '料理系'],
-            ['name' => 'お掃除系'],
-            ['name' => '洗濯物系']
+            ['name' => '料理'],
+            ['name' => '掃除'],
+            ['name' => '洗濯'],
+            ['name' => '買い物'],
+            ['name' => 'その他'],
         ];
         DB::table('categories')->insert($params);
     }

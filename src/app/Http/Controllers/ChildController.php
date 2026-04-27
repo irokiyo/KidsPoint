@@ -23,7 +23,11 @@ class ChildController extends Controller
     }
     public function store(Request $request)
     {
-        $imagePath = $request->file('img_url') ? $request->file('img_url')->store('img_url', 'public') : null;
+        if ($request->hasFile('img_url')) {
+            $imagePath = $request->file('img_url')->store('img_url', 'public');
+        } else {
+            $imagePath = null;
+        }
 
         Child::create([
             'user_id' => auth()->id(),
@@ -37,7 +41,7 @@ class ChildController extends Controller
     }
     public function update(Child $child, Request $request)
     {
-        $imagePath = $request->file('img_url') ? $request->file('img_url')->store('img_url', 'public') : null;
+        $imagePath = $request->hasFile('img_url') ? $request->file('img_url')->store('img_url', 'public') : null;
 
         $child->update([
             'name' => $request->name,

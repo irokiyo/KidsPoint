@@ -33,8 +33,8 @@
                         <p class="point">{{ $child->totalDayPoint() }}ポイント</p>
                     </li>
                     <li class="content__item">
-                        <p class="item__ttl">溜まっているポイント</p>
-                        <p class="point">{{ $child->totalPoint() }}ポイント</p>
+                        <p class="item__ttl">貯まっているポイント</p>
+                        <p class="point">{{ $child->totalPoint() - $child->totalUsedPoint() }}ポイント</p>
                     </li>
                 </ul>
             </div>

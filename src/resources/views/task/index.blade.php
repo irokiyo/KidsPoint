@@ -12,8 +12,10 @@
 <div class="page">
     @include('partials.sidebar')
     <div class="main-content">
-        <h2 class="ttl">お手伝いリスト</h2>
-        <a href="{{ route('task.create') }}" class="link">＋</a>
+        <div class="ttl">
+            <h2 class="ttl_text">お手伝いリスト</h2>
+            <a href="{{ route('task.create') }}" class="link">＋</a>
+        </div>
         @foreach($tasks as $task)
         <div class="item-list">
             <p class="card__task__name">{{$task->title}}</p>
@@ -28,8 +30,8 @@
                 </form>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
-@endforeach
 @endsection
 

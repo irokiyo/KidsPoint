@@ -15,7 +15,16 @@
         <form action="{{ route('task.store') }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="name" class="form-label">お手伝い名</label>
+                <label for="category" class="form-label">カテゴリ</label>
+                <select name="category_id" id="category_id" required>
+                    <option value="">選択してください</option>
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name" class="form-label">お手伝い内容</label>
                 <input type="text" name="name" id="name" required>
             </div>
             <div class="form-group">

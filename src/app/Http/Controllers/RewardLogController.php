@@ -29,4 +29,10 @@ class RewardLogController extends Controller
         }
         return redirect()->route('home')->with('success', '交換しました。');
     }
+    public function index(Child $child)
+    {
+        $rewardLogs = RewardLog::with('reward')->where('child_id', $child->id)->get();
+
+        return view('reward-log.history', compact('child', 'rewardLogs'));
+    }
 }

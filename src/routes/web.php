@@ -39,5 +39,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/reward/destroy/{reward}', [RewardController::class, 'destroy'])->name('reward.destroy');
 
     Route::get('/reward/log/{child}', [RewardLogController::class, 'create'])->name('reward.log');
-    Route::post('/reward/log/{child}', [RewardLogController::class, 'store'])->name('reward.log.sore');
+    Route::post('/reward/log/{child}', [RewardLogController::class, 'store'])->name('reward.log.store');
+    Route::get('/reward/log/history/{child}', [RewardLogController::class, 'index'])->name('reward.log.history');
 });

@@ -12,8 +12,10 @@
 <div class="page">
     @include('partials.sidebar')
     <div class="main-content">
-        <h2 class="ttl">報奨リスト</h2>
-        <a href="{{ route('reward.create') }}" class="link">＋</a>
+        <div class="ttl">
+            <h2 class="ttl__text">報奨リスト</h2>
+            <a href="{{ route('reward.create') }}" class="link">＋</a>
+        </div>
         @foreach($rewards as $reward)
         <div class="item-list">
             <p class="card__reward__name">{{$reward->name}}</p>
