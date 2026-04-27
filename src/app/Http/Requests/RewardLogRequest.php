@@ -23,13 +23,14 @@ class RewardLogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'used_point' => ['required'],
+            'rewards' => ['required','array'],
         ];
     }
     public function messages(): array
     {
         return [
-            'used_point.required' => '報奨が選ばれていません。',
+            'rewards.required' => '報奨が選ばれていません。',
+            'rewards.array' => '報奨が選ばれていません。',
         ];
     }
 }

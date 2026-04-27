@@ -23,7 +23,7 @@ class TaskRecordRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'task_id' => ['required'],
+            'task' => ['required','array'],
             'date' => ['required', 'date'],
             'comment' => ['nullable', 'string'],
             'point' => ['nullable', 'integer', 'min:0'],
@@ -32,7 +32,7 @@ class TaskRecordRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'task_id.required' => 'お手伝いが選ばれていません。',
+            'task.required' => 'お手伝いが選ばれていません。',
             'date.required' => '日付を選択してください。',
             'date.date' => '日付が有効ではありません。',
             'comment.string' => 'コメントは文字列でなければなりません。',

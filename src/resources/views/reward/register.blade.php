@@ -17,10 +17,20 @@
             <div class="form-group">
                 <label for="name" class="form-label">報奨名</label>
                 <input type="text" name="name" id="name" required>
+                @error('name')
+                <div class="error__message">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="point" class="form-label">必要ポイント</label>
                 <input type="number" name="point" id="point" required>
+                @error('point')
+                <div class="error__message">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="store-btn">
                 <button type="submit">登録する</button>

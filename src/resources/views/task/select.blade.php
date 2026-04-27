@@ -15,10 +15,12 @@
 <form action="{{ route('task.record', ['child' => $child->id]) }}" method="post">
     @csrf
     @foreach($tasks as $task)
-    
     <div class="card">
         <input type="checkbox" name="tasks[]" id="task-{{$task->id}}" value="{{$task->id}}">
         <label for="task-{{$task->id}}">{{$task->title}}{{$task->point}}ポイント</label>
+        @error('tasks')
+        <div class="error">{{ $message }}</div>
+        @enderror
     </div>
     @endforeach
     <div class="store btn">
