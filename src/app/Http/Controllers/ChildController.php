@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ChildRequest;
 use App\Models\Child;
 
 class ChildController extends Controller
@@ -21,7 +22,7 @@ class ChildController extends Controller
     {
         return view('family.register');
     }
-    public function store(Request $request)
+    public function store(ChildRequest $request)
     {
         if ($request->hasFile('img_url')) {
             $imagePath = $request->file('img_url')->store('img_url', 'public');
@@ -39,7 +40,7 @@ class ChildController extends Controller
 
         return redirect()->route('child.index')->with('success', '登録しました。');
     }
-    public function update(Child $child, Request $request)
+    public function update(Child $child, ChildRequest $request)
     {
         $imagePath = $request->hasFile('img_url') ? $request->file('img_url')->store('img_url', 'public') : null;
 

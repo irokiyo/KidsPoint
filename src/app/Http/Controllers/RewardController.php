@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\RewardRequest;
 use App\Models\Reward;
 
 class RewardController extends Controller
@@ -16,7 +17,7 @@ class RewardController extends Controller
     {
         return view('reward.register');
     }
-    public function store(Request $request)
+    public function store(RewardRequest $request)
     {
         Reward::create([
             'name' => $request->name,
@@ -24,7 +25,7 @@ class RewardController extends Controller
         ]);
         return redirect()->route('reward.index')->with('success', '登録しました。');
     }
-    public function update(Request $request, Reward $reward)
+    public function update(RewardRequest $request, Reward $reward)
     {
         $reward->update([
             'name' => $request->name,

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\RewardLogRequest;
 use App\Models\Child;
 use App\Models\RewardLog;
 use App\Models\Reward;
@@ -15,7 +16,7 @@ class RewardLogController extends Controller
         return view('reward.select', compact('child', 'rewards'));
     }
 
-    public function store(Request $request, Child $child)
+    public function store(RewardLogRequest $request, Child $child)
     {
         $rewardIds = $request->input('rewards', []);
         foreach ($rewardIds as $rewardId) {
