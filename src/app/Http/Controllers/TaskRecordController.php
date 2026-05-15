@@ -26,4 +26,13 @@ class TaskRecordController extends Controller
         }
         return redirect()->route('home')->with('success', '記録しました。');
     }
+    public function show(Child $child, $date)
+    {
+        $taskRecordPoints = TaskRecord::with('task')
+            ->where('child_id', $child->id)
+            ->whereDate('recorded_at', $date)
+            ->get()->sum('point');
+
+        return view('home.show', compact('child', 'taskRecordPoints', 'date'));
+    }
 }

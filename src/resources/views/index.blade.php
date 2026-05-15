@@ -4,10 +4,6 @@
 <link rel="stylesheet" href="{{ asset('css/family.css') }}" />
 @endsection
 
-@section('header')
-@include('partials.header')
-@endsection
-
 @section('content')
 <div class="page">
     @include('partials.sidebar')
@@ -23,7 +19,7 @@
                     <p class="child-profile__name">{{$child->name}}</p>
                 </div>
                 <div class="record__url">
-                    <a href="" class="card__sub-link">記録を見る</a>
+                    <a href="{{route('calendar',['child'=>$child->id])}}" class="card__sub-link">記録を見る</a>
                 </div>
             </div>
             <div class="card__content">
@@ -38,11 +34,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="card__url">
-                <a href="{{ route('task.select', ['child' => $child->id]) }}" class="card__button">お手伝いしたよ</a>
-            </div>
-            <div class="card__url">
-                <a href="{{ route('reward.log', ['child' => $child->id]) }}" class="card__button">ポイントを使う</a>
+            <div class="card__buttons">
+                <div class="card__url">
+                    <a href="{{ route('task.select', ['child' => $child->id]) }}" class="card__button">お手伝いしたよ</a>
+                </div>
+                <div class="card__url">
+                    <a href="{{ route('reward.log', ['child' => $child->id]) }}" class="card__button">ポイントを使う</a>
+                </div>
             </div>
         </div>
         @endforeach

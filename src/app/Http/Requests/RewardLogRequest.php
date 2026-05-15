@@ -23,7 +23,7 @@ class RewardLogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'rewards' => ['required','array'],
+            'rewards' => ['required','array', 'min:1'],
         ];
     }
     public function messages(): array
@@ -31,6 +31,7 @@ class RewardLogRequest extends FormRequest
         return [
             'rewards.required' => '報奨が選ばれていません。',
             'rewards.array' => '報奨が選ばれていません。',
+            'rewards.min' => '報奨は1つ以上選択してください。',
         ];
     }
 }

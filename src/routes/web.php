@@ -11,6 +11,7 @@ use App\Http\Controllers\RewardLogController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/calendar/{child}', [HomeController::class, 'calendar'])->name('calendar');
 
     Route::get('/child/index', [ChildController::class, 'index'])->name('child.index');
     Route::get('/child/show/{child}', [ChildController::class, 'show'])->name('child.show');
@@ -30,6 +31,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/task/destroy/{task}', [TaskController::class, 'destroy'])->name('task.destroy');
 
     Route::post('/task/record/{child}', [TaskRecordController::class, 'store'])->name('task.record');
+    Route::get('/task/record/{child}/{date}', [TaskRecordController::class, 'show'])->name('task.record.show');
 
 
     Route::get('/reward/index', [RewardController::class, 'index'])->name('reward.index');

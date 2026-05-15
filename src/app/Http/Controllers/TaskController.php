@@ -28,7 +28,7 @@ class TaskController extends Controller
     public function store(TaskRequest $request)
     {
         Task::create([
-            'title' => $request->name,
+            'title' => $request->title,
             'point' => $request->point,
             'category_id' => $request->category_id
         ]);
@@ -37,7 +37,7 @@ class TaskController extends Controller
     public function update(TaskRequest $request, Task $task)
     {
         $task->update([
-            'title' => $request->name,
+            'title' => $request->title,
             'point' => $request->point,
             'category_id' => $request->category_id
         ]);

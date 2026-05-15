@@ -4,7 +4,11 @@
 .item__ttl{
     border-bottom: 1px solid #33333318;
 }
-
+.card__buttons{
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
 .card__url {
     display: block;
     flex-wrap: wrap;
@@ -41,4 +45,32 @@
 
 .card__child__img img{
     border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "name"
+            "info"
+            "buttons" ;
+    }
+    .child-list {
+        grid-area: name;
+        display: flex;
+        justify-content: space-between;
+    }
+    .record__url {
+        margin-top: 20px;
+    }
+    .card__content {
+        grid-area: info;
+    }
+    .card__buttons {
+        grid-area: buttons;
+    }
+    .card__button{
+        width: 350px;
+    }
 }

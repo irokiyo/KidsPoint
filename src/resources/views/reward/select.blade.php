@@ -3,10 +3,6 @@
 @section('css')
 @endsection
 
-@section('header')
-@include('partials.header')
-@endsection
-
 @section('content')
 <div class="page">
     @include('partials.sidebar')

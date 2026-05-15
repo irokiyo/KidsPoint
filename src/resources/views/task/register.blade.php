@@ -3,10 +3,6 @@
 @section('css')
 @endsection
 
-@section('header')
-@endsection
-
-
 @section('content')
 <div class="page">
     @include('partials.sidebar')
@@ -29,9 +25,9 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="name" class="form-label">お手伝い内容</label>
-                <input type="text" name="name" id="name">
-                @error('name')
+                <label for="title" class="form-label">お手伝い内容</label>
+                <input type="text" name="title" id="title">
+                @error('title')
                 <div class="error__message">
                     {{ $message }}
                 </div>

@@ -24,7 +24,7 @@ class TaskRequest extends FormRequest
     {
         return [
             'category_id' => ['required'],
-            'name' => ['required', 'string', 'max:255'],
+            'title' => ['required', 'string', 'max:255'],
             'point' => ['required', 'integer', 'min:1'],
         ];
     }
@@ -32,9 +32,9 @@ class TaskRequest extends FormRequest
     {
         return [
             'category_id.required' => 'カテゴリーが選ばれていません。',
-            'name.required' => 'お手伝い名は必須です。',
-            'name.string' => 'お手伝い名は文字列で記入してください。',
-            'name.max' => 'お手伝い名は255文字以内で記入してください。',
+            'title.required' => 'お手伝い名は必須です。',
+            'title.string' => 'お手伝い名は文字列で記入してください。',
+            'title.max' => 'お手伝い名は255文字以内で記入してください。',
             'point.required' => 'ポイントは必須です。',
             'point.integer' => 'ポイントは整数で記入してください。',
             'point.min' => 'ポイントは1以上で記入してください。',
